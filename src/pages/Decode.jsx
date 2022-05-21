@@ -73,6 +73,11 @@ function Decode() {
         <div className="flex justify-center my-5">
           <Link to="/">
             <a className="bg-red-500 px-8 py-3 m-2 rounded text-white font-bold bg-opacity-90">
+              Home
+            </a>
+          </Link>
+          <Link to="/encode">
+            <a className="bg-red-500 px-8 py-3 m-2 rounded text-white font-bold bg-opacity-90">
               Encode
             </a>
           </Link>

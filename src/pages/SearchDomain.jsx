@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FaLink } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import * as XLSX from "xlsx";
 
 const SearchDomain = () => {
@@ -98,10 +99,21 @@ const SearchDomain = () => {
   };
   console.log(filteredData);
   return (
-    <div className="h-auto flex justify-center  items-center  pb-24 bg-opacity-50 bg-gradient-to-r from-cyan-50 via-cyan-300 to-sky-100">
+    <div className="h-auto flex  justify-center  items-center  pb-24 bg-opacity-50 bg-gradient-to-r from-cyan-50 via-cyan-300 to-sky-100">
       <div
-        className={`  h-auto mt-16 md:mt-24 sm:w-4/5 md:w-5/7 lg:w-2/3 rounded-lg shadow-lg border m-3 bg-white `}
+        className={`  h-auto mt-16 sm:mt-24  sm:w-4/5 md:w-5/7 lg:w-2/3 rounded-lg shadow-lg border m-3 bg-white `}
       >
+        <div className="m-3">
+          <Link to="/">
+            <a
+              href="/"
+              className="px-3 py-2 rounded border bg-white capitalize text-gray-700 hover:text-cyan-600 hover:boder-cyan-600"
+            >
+              go back
+            </a>
+          </Link>
+        </div>
+
         <p className="flex justify-center items-center text-xl sm:text-3xl font-semibold text-cyan-600 capitalize my-10 ">
           <span>Find your resourse</span>
           <span>

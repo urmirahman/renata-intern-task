@@ -78,7 +78,12 @@ function Encode() {
     >
       <div className="w-full sm:w-4/5 md:w-5/7 lg:w-1/2 ">
         <div className="flex justify-center my-5">
-          <Link to="/">
+        <Link to="/">
+            <a className="bg-red-500 px-8 py-3 m-2 rounded text-white font-bold bg-opacity-90">
+              Home
+            </a>
+          </Link>
+          <Link to="/encode">
             <a className="bg-red-700 px-8 py-3 m-2 rounded text-white font-bold bg-opacity-90">
               Encode
             </a>
