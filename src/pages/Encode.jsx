@@ -79,17 +79,17 @@ function Encode() {
       <div className="w-full sm:w-4/5 md:w-5/7 lg:w-1/2 ">
         <div className="flex justify-center my-5">
         <Link to="/">
-            <a className="bg-red-500 px-8 py-3 m-2 rounded text-white font-bold bg-opacity-90">
+            <a className="bg-red-500 px-4 py-2 sm:px-8 sm:py-3 m-2 rounded text-white font-bold bg-opacity-90">
               Home
             </a>
           </Link>
           <Link to="/encode">
-            <a className="bg-red-700 px-8 py-3 m-2 rounded text-white font-bold bg-opacity-90">
+            <a className="bg-red-700 px-4 py-2 sm:px-8 sm:py-3 m-2 rounded text-white font-bold bg-opacity-90">
               Encode
             </a>
           </Link>
           <Link to="/decode">
-            <a className="bg-red-500 px-8 py-3 m-2 rounded text-white font-bold bg-opacity-90">
+            <a className="bg-red-500 px-4 py-2 sm:px-8 sm:py-3 m-2 rounded text-white font-bold bg-opacity-90">
               Decode
             </a>
           </Link>
@@ -103,7 +103,7 @@ function Encode() {
           } `}
         >
           <div className="mb-10 flex justify-center">
-            <span className="text-2xl font-bold text-white">
+            <span className="text-2xl font-bold text-white text-center">
               Play with your message 🎭
             </span>
           </div>

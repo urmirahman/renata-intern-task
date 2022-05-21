@@ -101,7 +101,7 @@ const SearchDomain = () => {
   return (
     <div className="h-auto flex  justify-center  items-center  pb-24 bg-opacity-50 bg-gradient-to-r from-cyan-50 via-cyan-300 to-sky-100">
       <div
-        className={`  h-auto mt-16 sm:mt-24  sm:w-4/5 md:w-5/7 lg:w-2/3 rounded-lg shadow-lg border m-3 bg-white `}
+        className={`  h-auto mt-16 sm:mt-24  sm:w-4/5 md:w-5/7 lg:w-2/3 rounded-lg shadow-lg border m-3 py-10 bg-white `}
       >
         <div className="m-3">
           <Link to="/">
@@ -232,7 +232,7 @@ const SearchDomain = () => {
             <div className="flex justify-center items-center w-full my-5">
               <button
                 onClick={findLearnLink}
-                className="px-6 py-2 text-lg font-semibold text-white bg-cyan-600 rounded-lg"
+                className="px-6 py-2 text-lg font-semibold text-white bg-cyan-600 rounded-lg hover:bg-cyan-700"
               >
                 Search Information
               </button>
