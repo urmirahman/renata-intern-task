@@ -5,7 +5,7 @@ import { MdManageSearch } from "react-icons/md";
 
 const Home = () => {
   return (
-    <div className="h-auto bg-gray-200 flex flex-col">
+    <div className="h-auto bg-gray-50 flex flex-col">
       <div className="text-center pt-10 sm:pt-16 md:pt-24">
         <span className="text-2xl sm:text-3xl md:text-5xl font-semibold text-gray-600 ">
           Start with anyone 🎉
