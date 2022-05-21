@@ -2,17 +2,17 @@
 
 Given Task:
 
-[x] [Build] Make a two page application for encryption/decryption message
+- [x] [Build] Make a two page application for encryption/decryption message
 
-[x] [Data Processing] Dependent Dropdowns
+- [x] [Data Processing] Dependent Dropdowns
 
 ### Tach Stack
 
-[x] React - For FrontEnd Library 🏡
+- [x] React - For FrontEnd Library 🏡
 
-[x] TailWindCss - For Simple Style 💄 & responsiveness ✨
+- [x] TailWindCss - For Simple Style 💄 & responsiveness ✨
 
-[x] Css - Simple Animations 💫
+- [x] Css - Simple Animations 💫
 
 ## How to start
 
