@@ -14,7 +14,7 @@ const Home = () => {
       <div className="p-10 h-auto flex flex-col md:flex-row justify-center items-center">
         <Link to="/encode">
           <a className="flex flex-col justify-center items-center   group cssanimation fadeInLeft">
-            <div className="group-hover:shadow-xl bg-white text-xl h-52 w-52 rounded-lg border-2 border-gray-400 p-10 mx-10 my-5 flex flex-col justify-center items-center">
+            <div className="group-hover:shadow-xl bg-white text-xl h-52 w-52 rounded-lg border-2 border-gray-400 p-10 mx-2 md:mx-10 my-5 flex flex-col justify-center items-center">
               <span>
                 <BsShieldLockFill className="text-6xl text-sky-500 mb-3" />
               </span>
@@ -29,7 +29,7 @@ const Home = () => {
         </Link>
         <Link to="search_domain">
           <a className="flex flex-col justify-center items-center   group cssanimation fadeInRight">
-            <div className="group-hover:shadow-xl bg-white text-xl h-52 w-52 rounded-lg border-2 border-gray-400 p-10 mx-10 my-5 flex flex-col justify-center items-center">
+            <div className="group-hover:shadow-xl bg-white text-xl h-52 w-52 rounded-lg border-2 border-gray-400 p-10 mx-2 md:mx-10 my-5 flex flex-col justify-center items-center">
               <span>
                 <MdManageSearch className="text-6xl text-sky-500 mb-3" />
               </span>
