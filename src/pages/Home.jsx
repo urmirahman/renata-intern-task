@@ -5,13 +5,13 @@ import { MdManageSearch } from "react-icons/md";
 
 const Home = () => {
   return (
-    <div className="h-auto bg-gray-50 ">
+    <div className="h-screen bg-gray-50 ">
       {/* <div className="text-center pt-10 sm:pt-16 md:pt-24">
         <span className="text-2xl sm:text-3xl md:text-5xl font-semibold text-gray-600 ">
           Start with anyone 🎉
         </span>
       </div> */}
-      <div className="p-10 h-auto flex flex-col md:flex-row justify-center items-center">
+      <div className=" h-auto flex flex-col md:flex-row justify-center items-center">
         <Link to="/encode">
           <a className="flex flex-col justify-center items-center   group cssanimation fadeInLeft">
             <div className="group-hover:shadow-xl bg-white text-xl h-52 w-52 rounded-lg border-2 border-gray-400 p-10 mx-2 md:mx-10 my-5 flex flex-col justify-center items-center">
