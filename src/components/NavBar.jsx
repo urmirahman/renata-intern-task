@@ -26,29 +26,28 @@ const NavBar = () => {
   return (
     <div className="flex justify-center my-5">
       <Link to="/">
-        <div className="bg-red-500 px-4 py-2 sm:px-8 sm:py-3 m-2 rounded text-white font-bold bg-opacity-90">
+        <a className="bg-red-500 px-4 py-2 sm:px-8 sm:py-3 m-2 rounded text-white font-bold bg-opacity-90">
           Home
-        </div>
+        </a>
       </Link>
 
       {links.map((link, index) => (
-        <Link
-          to={`${link.link}`}
+        <a
           key={index}
           onClick={(e) => {
             e.preventDefault();
             setActive(link.id);
-            console.log(active);
           }}
         >
-          <div
+          <Link
+            to={link.link}
             className={` ${
               link.id === active ? "bg-red-700 " : "bg-red-500 "
             } px-4 py-2 sm:px-8 sm:py-3 m-2 rounded text-white font-bold bg-opacity-90`}
           >
             {link.name}
-          </div>
-        </Link>
+          </Link>
+        </a>
       ))}
     </div>
   );
