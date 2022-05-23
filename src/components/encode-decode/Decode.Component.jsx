@@ -77,6 +77,8 @@ const DecodeComponent = () => {
         </span>
       </div>
       <Input
+        label="Encoded message"
+        placeholder="example:25BZSR.ZMC.CNFR"
         message={messageRef}
         onChange={() => {
           setEncodedMessage("");

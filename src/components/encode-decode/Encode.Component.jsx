@@ -83,6 +83,8 @@ const EncodeComponent = () => {
         </span>
       </div>
       <Input
+      label="Your message"
+      placeholder="example: CATS AND DOGS"
         message={messageRef}
         onChange={() => {
           setEncodedMessage("");
