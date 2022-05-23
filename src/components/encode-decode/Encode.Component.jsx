@@ -20,7 +20,7 @@ const EncodeComponent = () => {
       setCopy(false);
     } else {
       setFadeinBottom(false);
-      setError("Field cannot be emptied and letters only");
+      setError("Field cannot be emptied and A-Z,a-z and 'space' only");
     }
 
     let str = messageRef.current.value;
@@ -79,12 +79,12 @@ const EncodeComponent = () => {
     >
       <div className="mb-10 flex justify-center">
         <span className="text-2xl font-bold text-white text-center">
-      Play with your Message 🎭
+          Play with your Message 🎭
         </span>
       </div>
       <Input
-      label="Your message"
-      placeholder="example: CATS AND DOGS"
+        label="Your message"
+        placeholder="example: CATS AND DOGS"
         message={messageRef}
         onChange={() => {
           setEncodedMessage("");
