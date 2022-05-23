@@ -15,14 +15,14 @@ const DecodeComponent = () => {
     e.preventDefault();
     if (
       messageRef.current.value !== "" &&
-      messageRef.current.value.match("^[a-zA-Z0-9_.-]*$") != null
+      messageRef.current.value.match("^[a-zA-Z0-9_.\s]*$") !== null
     ) {
       setFadeinBottom(true);
       setCopy(false);
     } else {
       setFadeinBottom(false);
       setError(
-        "Field cannot be emptied and letters ,numbers and point(.) only"
+        "Field cannot be emptied and 'no space', A-Z,a-z,0-9 , point(.) only"
       );
     }
 

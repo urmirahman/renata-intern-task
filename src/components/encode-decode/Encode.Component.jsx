@@ -14,7 +14,7 @@ const EncodeComponent = () => {
   const handleEncoding = () => {
     if (
       messageRef.current.value !== "" &&
-      messageRef.current.value.match("^[a-zA-Z ]*$") != null
+      messageRef.current.value.match("^[a-zA-Z ]*$") !== null
     ) {
       setFadeinBottom(true);
       setCopy(false);
