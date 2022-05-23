@@ -4,7 +4,7 @@ import Decode from "../pages/Decode";
 import Encode from "../pages/Encode";
 import Home from "../pages/Home";
 import SearchDomain from "../pages/SearchDomain";
-import Testpage from "../pages/Testpage";
+
 
 const Router = () => {
   return (
