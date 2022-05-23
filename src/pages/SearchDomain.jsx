@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { FaLink } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import * as XLSX from "xlsx";
+import IFrame from "../components/search-domain/IFrame";
+import Input from "../components/search-domain/Input";
 
 const SearchDomain = () => {
   const [fetchedData, setFetchedData] = useState([]);
@@ -62,7 +64,7 @@ const SearchDomain = () => {
       filteredData.learn === ""
     ) {
       setError("Please Select all the field");
-      console.log("error:please select all");
+      // console.log("error:please select all");
     } else {
       const fil = fetchedData.filter(
         (item) =>
@@ -122,110 +124,26 @@ const SearchDomain = () => {
         </p>
         <form className="p-4">
           <div className="flex flex-wrap   ">
-            <div className="w-full md:w-1/3 sm:px-3 mb-6 md:mb-0">
-              <label
-                className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                htmlFor="grid-state"
-              >
-                Language
-              </label>
-              <div className="relative">
-                <select
-                  className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                  id="grid-state"
-                  onChange={handleChangeLanguage}
-                >
-                  <option value="">Choose Language</option>
-                  {fetchedData.map((item, index) => (
-                    <option key={index} value={item.Language}>
-                      {item.Language}
-                    </option>
-                  ))}
-                </select>
-                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                  <svg
-                    className="fill-current h-4 w-4"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                  >
-                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div className="w-full md:w-1/3 sm:px-3 mb-6 md:mb-0">
-              <label
-                className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                htmlFor="grid-state"
-              >
-                Topic
-              </label>
-              <div className="relative">
-                <select
-                  className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                  id="grid-state"
-                  onChange={handleChangeTopic}
-                  disabled={filteredData.language !== "" ? false : true}
-                >
-                  <option value="">Choose Topic</option>
-                  {fetchedData
-                    .filter((item) => item.Language === filteredData.language)
-                    .map((filterItem, index) => (
-                      <option key={index} value={filterItem.Topic}>
-                        {filterItem.Topic}
-                      </option>
-                    ))}
-                </select>
-                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                  <svg
-                    className="fill-current h-4 w-4"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                  >
-                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div className="w-full md:w-1/3 sm:px-3 mb-6 md:mb-0">
-              <label
-                className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                htmlFor="grid-state"
-              >
-                Learn
-              </label>
-              <div className="relative">
-                <select
-                  className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                  id="grid-state"
-                  onChange={handleChangeLearn}
-                  onFocus={() => {
-                    console.log("in select");
-                    setFilteredData((prev) => ({ ...prev, learn: "" }));
-                  }}
-                  disabled={filteredData.topic !== "" ? false : true}
-                >
-                  {" "}
-                  <option value="">Choose Learn</option>
-                  {fetchedData
-                    .filter((item) => item.Topic === filteredData.topic)
-                    .map((filterItem, index) => (
-                      <option key={index} value={filterItem.Learn}>
-                        {filterItem.Learn}
-                      </option>
-                    ))}
-                </select>
-                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                  <svg
-                    className="fill-current h-4 w-4"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                  >
-                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-                  </svg>
-                </div>
-              </div>
-            </div>
+            <Input
+              handleChange={handleChangeLanguage}
+              fetchedData={fetchedData}
+              name="Language"
+            />
+
+            <Input
+              handleChange={handleChangeTopic}
+              fetchedData={fetchedData}
+              name="Topic"
+              filterData={filteredData.language}
+            />
+
+            <Input
+              handleChange={handleChangeLearn}
+              fetchedData={fetchedData}
+              name="Learn"
+              filterData={filteredData.topic}
+            />
+
             <div className={`my-2  `}>
               <span className="text-red-500 text-base px-3 ">{error}</span>
             </div>
@@ -239,16 +157,7 @@ const SearchDomain = () => {
             </div>
           </div>
         </form>
-        <div className="flex justify-center items-center w-full sm:my-10">
-          <iframe
-            src={
-              filteredData.learnLink ||
-              "https://www.youtube.com/embed/uXWycyeTeCs"
-            }
-            className="sm:h-56 md:h-64 sm:w-64 md:w-96 shadow-lg border"
-            title="0"
-          ></iframe>
-        </div>
+        <IFrame link={filteredData.learnLink} />
       </div>
     </div>
   );
