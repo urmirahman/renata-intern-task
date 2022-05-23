@@ -2,43 +2,52 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const NavBar = () => {
-  const [active, setActive] = useState(0);
-  const links = [
+  var links = [
     {
+      id: 1,
       name: "Encode",
       link: "/encode",
     },
     {
+      id: 2,
       name: "Decode",
       link: "/decode",
     },
   ];
+  const [active, setActive] = useState(1);
   useEffect(() => {
-    console.log(active);
+    console.log("current value", active);
   });
+
+  const handleActive = (index) => {
+    setActive(index);
+    console.log("previous value:", active);
+  };
   return (
     <div className="flex justify-center my-5">
       <Link to="/">
-        <a className="bg-red-500 px-4 py-2 sm:px-8 sm:py-3 m-2 rounded text-white font-bold bg-opacity-90">
+        <div className="bg-red-500 px-4 py-2 sm:px-8 sm:py-3 m-2 rounded text-white font-bold bg-opacity-90">
           Home
-        </a>
+        </div>
       </Link>
+
       {links.map((link, index) => (
         <Link
+          to={`${link.link}`}
           key={index}
-          onClick={() => {
-            setActive(index);
-            console.log("previous value:", active);
+          onClick={(e) => {
+            e.preventDefault();
+            setActive(link.id);
+            console.log(active);
           }}
-          to={link.link}
         >
-          <a
+          <div
             className={` ${
-              active === index ? "bg-red-700 " : "bg-red-500 "
+              link.id === active ? "bg-red-700 " : "bg-red-500 "
             } px-4 py-2 sm:px-8 sm:py-3 m-2 rounded text-white font-bold bg-opacity-90`}
           >
             {link.name}
-          </a>
+          </div>
         </Link>
       ))}
     </div>
