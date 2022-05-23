@@ -79,7 +79,7 @@ const EncodeComponent = () => {
     >
       <div className="mb-10 flex justify-center">
         <span className="text-2xl font-bold text-white text-center">
-          Test PAGE
+      Play with your Message 🎭
         </span>
       </div>
       <Input
