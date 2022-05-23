@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
   var links = [
@@ -14,22 +14,18 @@ const NavBar = () => {
       link: "/decode",
     },
   ];
-  const [active, setActive] = useState(1);
+  const [active, setActive] = useState(links[0].id);
   useEffect(() => {
     console.log("current value", active);
   });
 
-  const handleActive = (index) => {
-    setActive(index);
-    console.log("previous value:", active);
-  };
   return (
     <div className="flex justify-center my-5">
-      <Link to="/">
+      <NavLink to="/">
         <a className="bg-red-500 px-4 py-2 sm:px-8 sm:py-3 m-2 rounded text-white font-bold bg-opacity-90">
           Home
         </a>
-      </Link>
+      </NavLink>
 
       {links.map((link, index) => (
         <a
@@ -39,14 +35,16 @@ const NavBar = () => {
             setActive(link.id);
           }}
         >
-          <Link
+          <NavLink
             to={link.link}
-            className={` ${
-              link.id === active ? "bg-red-700 " : "bg-red-500 "
-            } px-4 py-2 sm:px-8 sm:py-3 m-2 rounded text-white font-bold bg-opacity-90`}
+            style={({ isActive }) => ({
+              color: isActive ? "#fff" : "#fff",
+              background: isActive ? "#b91c1c" : "#ef4444",
+            })}
+            className={`  px-4 py-2 sm:px-8 sm:py-3 m-2 rounded text-white font-bold bg-opacity-90`}
           >
             {link.name}
-          </Link>
+          </NavLink>
         </a>
       ))}
     </div>
