@@ -153,6 +153,6 @@ Data Processing from excel sheet:
 
 #### Solutions:
 
-1. For problem One Couldn't found any solution to show the url links because w3school refuse to connect because of there policies. Only in there domain Iframe works fine because of own domain.
+1. For problem One Couldn't found any solution to show the url links because w3school refuse to connect because of their policies. Only in their domain Iframe works fine because of own domain.
 2. First three Iframe link data is changed with other resource links in the excel file just to show the logic works fine.
 3. A Default Link is provided in iFrame .
